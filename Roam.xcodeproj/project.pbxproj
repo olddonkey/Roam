@@ -14,6 +14,7 @@
 		A293FAE6205B645A0026044B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A293FAE4205B645A0026044B /* Main.storyboard */; };
 		A293FAF2205B645A0026044B /* RoamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FAF1205B645A0026044B /* RoamTests.swift */; };
 		A293FAFD205B645A0026044B /* RoamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FAFC205B645A0026044B /* RoamUITests.swift */; };
+		A293FB0C205B7A660026044B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB0B205B7A660026044B /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A293FAF8205B645A0026044B /* RoamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A293FAFC205B645A0026044B /* RoamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoamUITests.swift; sourceTree = "<group>"; };
 		A293FAFE205B645A0026044B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A293FB0B205B7A660026044B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A293FB0C205B7A660026044B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 				A293FAF0205B645A0026044B /* RoamTests */,
 				A293FAFB205B645A0026044B /* RoamUITests */,
 				A293FAD9205B645A0026044B /* Products */,
+				A293FB0A205B7A660026044B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +131,14 @@
 			path = RoamUITests;
 			sourceTree = "<group>";
 		};
+		A293FB0A205B7A660026044B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A293FB0B205B7A660026044B /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +149,7 @@
 				A293FAD4205B645A0026044B /* Sources */,
 				A293FAD5205B645A0026044B /* Frameworks */,
 				A293FAD6205B645A0026044B /* Resources */,
+				A293FB0D205B7A7A0026044B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,6 +267,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A293FB0D205B7A7A0026044B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A293FAD4205B645A0026044B /* Sources */ = {
@@ -423,6 +453,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KACMQNFS8H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Roam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -440,6 +474,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KACMQNFS8H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Roam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
