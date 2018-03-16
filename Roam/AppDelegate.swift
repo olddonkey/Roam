@@ -7,18 +7,42 @@
 //
 
 import Cocoa
+import Alamofire
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var authenticationManager = AuthenticationManager()
+    var eventURLHandler = RoamEventURLHandler()
+    
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(handleAppleEvent(event:replyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
 
-
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        authenticationManager.requestNewAuthenticationIdentity()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    @objc func handleAppleEvent(event: NSAppleEventDescriptor, replyEvent: NSAppleEventDescriptor) {
+        guard let appleEventDescription = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject)) else {
+            return
+        }
+        
+        guard let appleEventURLString = appleEventDescription.stringValue else {
+            return
+        }
+        
+        guard let appleEventURL = URL(string: appleEventURLString) else {
+            return
+        }
+        
+        eventURLHandler.handleURL(url:appleEventURL)
     }
 
     // MARK: - Core Data stack
