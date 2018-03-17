@@ -8,7 +8,11 @@
 
 import Cocoa
 
+// Authentication related constants
 class AuthenticationParameters: NSObject {
+    
+    static let github_authentication_url: String = "https://github.com/login/oauth/authorize"
+    
     static let client_id_Key: String = "client_id"
     static let client_secret_Key: String = "client_secret"
     static let redirect_url_Key: String = "redirect_uri"
@@ -24,6 +28,7 @@ class AuthenticationParameters: NSObject {
     static let scope_Value: String = "repo gist user delete_repo"
 }
 
+// Class use to generate random string
 fileprivate class RandomString {
     let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     

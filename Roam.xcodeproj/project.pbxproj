@@ -19,6 +19,9 @@
 		A293FB17205B83BF0026044B /* AuthenticationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB16205B83BF0026044B /* AuthenticationParameters.swift */; };
 		A293FB1A205B957F0026044B /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB19205B957F0026044B /* URLExtensions.swift */; };
 		A293FB1C205B9D560026044B /* RoamEventURLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB1B205B9D560026044B /* RoamEventURLHandler.swift */; };
+		A293FB20205CD85D0026044B /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */; };
+		A293FB25205CFC590026044B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB23205CFC580026044B /* Crashlytics.framework */; };
+		A293FB26205CFC590026044B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB24205CFC590026044B /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		A293FB16205B83BF0026044B /* AuthenticationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParameters.swift; sourceTree = "<group>"; };
 		A293FB19205B957F0026044B /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		A293FB1B205B9D560026044B /* RoamEventURLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoamEventURLHandler.swift; sourceTree = "<group>"; };
+		A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
+		A293FB23205CFC580026044B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		A293FB24205CFC590026044B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A293FB25205CFC590026044B /* Crashlytics.framework in Frameworks */,
 				A293FB0C205B7A660026044B /* Alamofire.framework in Frameworks */,
+				A293FB26205CFC590026044B /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +134,7 @@
 		A293FAF0205B645A0026044B /* RoamTests */ = {
 			isa = PBXGroup;
 			children = (
+				A293FB21205CD8610026044B /* Utils */,
 				A293FAF1205B645A0026044B /* RoamTests.swift */,
 				A293FAF3205B645A0026044B /* Info.plist */,
 			);
@@ -144,6 +153,8 @@
 		A293FB0A205B7A660026044B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A293FB23205CFC580026044B /* Crashlytics.framework */,
+				A293FB24205CFC590026044B /* Fabric.framework */,
 				A293FB0B205B7A660026044B /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -167,6 +178,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A293FB21205CD8610026044B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,7 +196,8 @@
 				A293FAD4205B645A0026044B /* Sources */,
 				A293FAD5205B645A0026044B /* Frameworks */,
 				A293FAD6205B645A0026044B /* Resources */,
-				A293FB0D205B7A7A0026044B /* ShellScript */,
+				A293FB0D205B7A7A0026044B /* Carthage */,
+				A293FB22205CFC260026044B /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -237,6 +257,11 @@
 					A293FAD7205B645A0026044B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					A293FAEC205B645A0026044B = {
 						CreatedOnToolsVersion = 9.2;
@@ -297,7 +322,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A293FB0D205B7A7A0026044B /* ShellScript */ = {
+		A293FB0D205B7A7A0026044B /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,11 +330,26 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
 			);
+			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		A293FB22205CFC260026044B /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run cc57941e3b25e25069d539527726d18c657baa68 27d36c585d0bc022dd5d9c3b87016a4ee0cbf914cc25d35e6208bb222a60f8fb";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -333,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A293FAF2205B645A0026044B /* RoamTests.swift in Sources */,
+				A293FB20205CD85D0026044B /* URLExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,12 +522,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Roam/Roam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KACMQNFS8H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Roam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -501,12 +544,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Roam/Roam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KACMQNFS8H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Roam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

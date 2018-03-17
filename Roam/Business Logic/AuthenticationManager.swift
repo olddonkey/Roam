@@ -9,14 +9,20 @@
 import Cocoa
 import Alamofire
 
-class AuthenticationManager: NSObject {
+protocol AuthenticationManagerProtocol {
+    func requestNewAuthenticationIdentity()
+    func receiveCodeAndState(code: String, state: String)
+    func requestAccessToken(code: String)
+}
+
+class AuthenticationManager: NSObject, AuthenticationManagerProtocol {
     
     func requestNewAuthenticationIdentity() {
         // Potential to do in the future: have a native webview VC to open the url, instead of use system browser for consistency
         let parameters: [String: String] = [AuthenticationParameters.client_id_Key:AuthenticationParameters.client_id_Value,
                                       AuthenticationParameters.scope_Key:AuthenticationParameters.scope_Value,
                                       AuthenticationParameters.state_Key:AuthenticationParameters.state_Value]
-        guard var url = URL(string: "https://github.com/login/oauth/authorize") else {
+        guard var url = URL(string: AuthenticationParameters.github_authentication_url) else {
             // Todo: Add error handling here.
             return
         }
@@ -24,8 +30,15 @@ class AuthenticationManager: NSObject {
         NSWorkspace.shared.open(url)
     }
     
-    func didReceiveCodeAndState(code: String, state: String) {
-        
+    func receiveCodeAndState(code: String, state: String) {
+        // Double check if the return value is the unmodified one
+        if state == AuthenticationParameters.state_Value {
+            // Match, we can get access token
+            requestAccessToken(code: code)
+        }else {
+            // 1. Show Error
+            // 2. Retry Authentication
+        }
     }
     
     

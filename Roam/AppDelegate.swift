@@ -8,12 +8,14 @@
 
 import Cocoa
 import Alamofire
+import Fabric
+import Crashlytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    //var eventURLHandler = RoamEventURLHandler()
     var authenticationManager = AuthenticationManager()
-    var eventURLHandler = RoamEventURLHandler()
     
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(handleAppleEvent(event:replyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
@@ -22,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        Fabric.with([Crashlytics.self])
         authenticationManager.requestNewAuthenticationIdentity()
     }
 
@@ -42,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
-        eventURLHandler.handleURL(url:appleEventURL)
+        RoamEventURLHandler(authenticationManager: authenticationManager).handleURL(url:appleEventURL)
     }
 
     // MARK: - Core Data stack
