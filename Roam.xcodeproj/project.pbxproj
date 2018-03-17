@@ -22,6 +22,7 @@
 		A293FB20205CD85D0026044B /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */; };
 		A293FB25205CFC590026044B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB23205CFC580026044B /* Crashlytics.framework */; };
 		A293FB26205CFC590026044B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB24205CFC590026044B /* Fabric.framework */; };
+		A293FB29205D8E2F0026044B /* OauthTokeReservoir.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
 		A293FB23205CFC580026044B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A293FB24205CFC590026044B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokeReservoir.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		A293FB13205B7FD60026044B /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				A293FB27205D8CC30026044B /* Authentication */,
 				A293FB14205B7FF70026044B /* AuthenticationManager.swift */,
 				A293FB16205B83BF0026044B /* AuthenticationParameters.swift */,
 				A293FB1B205B9D560026044B /* RoamEventURLHandler.swift */,
@@ -184,6 +187,14 @@
 				A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A293FB27205D8CC30026044B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A293FB29205D8E2F0026044B /* OauthTokeReservoir.swift in Sources */,
 				A293FB17205B83BF0026044B /* AuthenticationParameters.swift in Sources */,
 				A293FB1A205B957F0026044B /* URLExtensions.swift in Sources */,
 				A293FADE205B645A0026044B /* ViewController.swift in Sources */,

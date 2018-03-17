@@ -18,6 +18,7 @@ protocol AuthenticationManagerProtocol {
 class AuthenticationManager: NSObject, AuthenticationManagerProtocol {
     
     func requestNewAuthenticationIdentity() {
+        // Todo: Enter loading page
         // Potential to do in the future: have a native webview VC to open the url, instead of use system browser for consistency
         let parameters: [String: String] = [AuthenticationParameters.client_id_Key:AuthenticationParameters.client_id_Value,
                                       AuthenticationParameters.scope_Key:AuthenticationParameters.scope_Value,
@@ -47,10 +48,32 @@ class AuthenticationManager: NSObject, AuthenticationManagerProtocol {
                                       AuthenticationParameters.client_secret_Key:AuthenticationParameters.client_secret_Value,
                                       AuthenticationParameters.code_Key:code,
                                       AuthenticationParameters.state_Key:AuthenticationParameters.state_Value]
-        Alamofire.request("https://github.com/login/oauth/access_token", method: .post, parameters: parameters).validate().responseJSON { response in
-            if let json = response.result.value {
-                print("\(json)")
+        Alamofire.request("https://github.com/login/oauth/access_token", method: .post, parameters: parameters).validate().responseString(completionHandler: { response in
+            guard let string = response.value else {
+                return
+            }
+            self.process(response: string)
+        })
+    }
+    
+    func process(response: String) -> UserToken {
+        var accessToken: String = ""
+        var scope: String = ""
+        var tokenType: String = ""
+        // 1. Split by &
+        let responseArray = response.split(separator: "&")
+        // 2. Find the one with access_token
+        for res in responseArray {
+            if res.contains("access_token=") {
+                accessToken = res.replacingOccurrences(of: "access_token=", with: "")
+            }
+            if res.contains("scope=") {
+                scope = res.replacingOccurrences(of: "scope=", with: "")
+            }
+            if res.contains("token_type=") {
+                tokenType = res.replacingOccurrences(of: "token_type=", with: "")
             }
         }
+        return UserToken(accessToken: accessToken, scope: scope, tokenType: tokenType)
     }
 }
