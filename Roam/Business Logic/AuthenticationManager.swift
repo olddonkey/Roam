@@ -48,11 +48,11 @@ class AuthenticationManager: NSObject, AuthenticationManagerProtocol {
                                       AuthenticationParameters.client_secret_Key:AuthenticationParameters.client_secret_Value,
                                       AuthenticationParameters.code_Key:code,
                                       AuthenticationParameters.state_Key:AuthenticationParameters.state_Value]
-        Alamofire.request("https://github.com/login/oauth/access_token", method: .post, parameters: parameters).validate().responseString(completionHandler: { response in
+        Alamofire.request(AuthenticationParameters.github_access_token_url, method: .post, parameters: parameters).validate().responseString(completionHandler: { [weak self] response in
             guard let string = response.value else {
                 return
             }
-            self.process(response: string)
+            self?.process(response: string)
         })
     }
     

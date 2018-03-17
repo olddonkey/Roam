@@ -12,6 +12,7 @@ import Cocoa
 class AuthenticationParameters: NSObject {
     
     static let github_authentication_url: String = "https://github.com/login/oauth/authorize"
+    static let github_access_token_url: String = "https://github.com/login/oauth/access_token"
     
     static let client_id_Key: String = "client_id"
     static let client_secret_Key: String = "client_secret"
@@ -26,6 +27,7 @@ class AuthenticationParameters: NSObject {
     static let client_secret_Value: String = "3e5b4b326b9bb7df3d5a1841e781a533d2613d7d"
     static let state_Value = RandomString.sharedInstance.getRandomStringOfLength(length: 10)
     static let scope_Value: String = "repo gist user delete_repo"
+    
 }
 
 // Class use to generate random string
