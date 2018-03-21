@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A23E8F6D2060E69F005A73A6 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */; };
 		A293FADC205B645A0026044B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FADB205B645A0026044B /* AppDelegate.swift */; };
 		A293FADE205B645A0026044B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FADD205B645A0026044B /* ViewController.swift */; };
 		A293FAE1205B645A0026044B /* Roam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A293FADF205B645A0026044B /* Roam.xcdatamodeld */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/Mac/KeychainSwift.framework; sourceTree = "<group>"; };
 		A293FAD8205B645A0026044B /* Roam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A293FADB205B645A0026044B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A293FADD205B645A0026044B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				A293FB25205CFC590026044B /* Crashlytics.framework in Frameworks */,
 				A293FB0C205B7A660026044B /* Alamofire.framework in Frameworks */,
 				A293FB26205CFC590026044B /* Fabric.framework in Frameworks */,
+				A23E8F6D2060E69F005A73A6 /* KeychainSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +158,7 @@
 		A293FB0A205B7A660026044B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */,
 				A293FB23205CFC580026044B /* Crashlytics.framework */,
 				A293FB24205CFC590026044B /* Fabric.framework */,
 				A293FB0B205B7A660026044B /* Alamofire.framework */,
@@ -340,6 +344,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/KeychainSwift.framework",
 			);
 			name = Carthage;
 			outputPaths = (

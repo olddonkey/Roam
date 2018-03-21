@@ -1,1 +1,2 @@
 github "Alamofire/Alamofire" "4.7.0"
+github "evgenyneu/keychain-swift" "10.0.0"

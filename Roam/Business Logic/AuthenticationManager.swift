@@ -52,6 +52,7 @@ class AuthenticationManager: NSObject, AuthenticationManagerProtocol {
             guard let string = response.value else {
                 return
             }
+            
             self?.process(response: string)
         })
     }
