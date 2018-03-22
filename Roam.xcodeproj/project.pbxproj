@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A23E8F6D2060E69F005A73A6 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */; };
+		A23E8F70206241AF005A73A6 /* IdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E8F6F206241AF005A73A6 /* IdentityManager.swift */; };
+		A23E8F722062429F005A73A6 /* AccessTokenVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E8F712062429F005A73A6 /* AccessTokenVerifier.swift */; };
 		A293FADC205B645A0026044B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FADB205B645A0026044B /* AppDelegate.swift */; };
 		A293FADE205B645A0026044B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FADD205B645A0026044B /* ViewController.swift */; };
 		A293FAE1205B645A0026044B /* Roam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A293FADF205B645A0026044B /* Roam.xcdatamodeld */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/Mac/KeychainSwift.framework; sourceTree = "<group>"; };
+		A23E8F6F206241AF005A73A6 /* IdentityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityManager.swift; sourceTree = "<group>"; };
+		A23E8F712062429F005A73A6 /* AccessTokenVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenVerifier.swift; sourceTree = "<group>"; };
 		A293FAD8205B645A0026044B /* Roam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A293FADB205B645A0026044B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A293FADD205B645A0026044B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A23E8F6E20623F66005A73A6 /* TokenVerification */ = {
+			isa = PBXGroup;
+			children = (
+				A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */,
+				A23E8F712062429F005A73A6 /* AccessTokenVerifier.swift */,
+			);
+			path = TokenVerification;
+			sourceTree = "<group>";
+		};
 		A293FACF205B645A0026044B = {
 			isa = PBXGroup;
 			children = (
@@ -169,10 +182,10 @@
 		A293FB13205B7FD60026044B /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				A23E8F6E20623F66005A73A6 /* TokenVerification */,
 				A293FB27205D8CC30026044B /* Authentication */,
-				A293FB14205B7FF70026044B /* AuthenticationManager.swift */,
-				A293FB16205B83BF0026044B /* AuthenticationParameters.swift */,
 				A293FB1B205B9D560026044B /* RoamEventURLHandler.swift */,
+				A23E8F6F206241AF005A73A6 /* IdentityManager.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -196,7 +209,8 @@
 		A293FB27205D8CC30026044B /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */,
+				A293FB14205B7FF70026044B /* AuthenticationManager.swift */,
+				A293FB16205B83BF0026044B /* AuthenticationParameters.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -380,8 +394,10 @@
 				A293FADE205B645A0026044B /* ViewController.swift in Sources */,
 				A293FB15205B7FF70026044B /* AuthenticationManager.swift in Sources */,
 				A293FADC205B645A0026044B /* AppDelegate.swift in Sources */,
+				A23E8F70206241AF005A73A6 /* IdentityManager.swift in Sources */,
 				A293FAE1205B645A0026044B /* Roam.xcdatamodeld in Sources */,
 				A293FB1C205B9D560026044B /* RoamEventURLHandler.swift in Sources */,
+				A23E8F722062429F005A73A6 /* AccessTokenVerifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
