@@ -8,6 +8,7 @@
 
 import Cocoa
 import KeychainSwift
+import Result
 
 class UserToken: NSObject, NSCoding {
     
@@ -53,23 +54,25 @@ class OauthTokeReservoir: NSObject {
         keychain = KeychainSwift(keyPrefix: keyPrefix)
     }
     
-    func storeUserToken(_ userToken: UserToken) throws {
+    @discardableResult
+    func storeUserToken(_ userToken: UserToken) -> Result<Void, storeUserTokenError> {
         let keychain = KeychainSwift()
         let encodedUserToken = NSKeyedArchiver.archivedData(withRootObject: userToken)
         if !keychain.set(encodedUserToken, forKey: userTokenKeychainStorageKey) {
-            throw storeUserTokenError.KeychainFailed
+            return Result.failure(.KeychainFailed)
         }
+        return .success(())
     }
     
     @discardableResult
-    func retrieveUserToken() throws -> UserToken {
+    func retrieveUserToken() -> Result<UserToken, retrieveUserTokenError> {
         let keychain = KeychainSwift()
         guard let encodedUserToken = keychain.getData(userTokenKeychainStorageKey) else {
-            throw retrieveUserTokenError.invalidKeychainData
+            return Result.failure(.invalidKeychainData)
         }
         guard let userToken = NSKeyedUnarchiver.unarchiveObject(with: encodedUserToken) as? UserToken else {
-            throw retrieveUserTokenError.invalidKeychainDataModel
+            return Result.failure(.invalidKeychainDataModel)
         }
-        return userToken
+        return Result.success(userToken)
     }
 }

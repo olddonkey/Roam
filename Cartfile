@@ -1,2 +1,3 @@
 github "Alamofire/Alamofire"
 github "evgenyneu/keychain-swift"
+github "antitypical/Result"

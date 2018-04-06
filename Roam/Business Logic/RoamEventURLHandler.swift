@@ -18,7 +18,7 @@ class RoamEventURLHandler: NSObject {
     }
     
     func handleURL(url: URL) {
-        // oauth 2.0 case
+        // Oauth 2.0 case
         if url.host == "authentication" {
             guard let query = url.queryParameters, let code = query["code"], let state = query["state"] else {
                 return

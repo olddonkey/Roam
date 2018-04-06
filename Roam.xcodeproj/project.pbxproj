@@ -26,6 +26,11 @@
 		A293FB25205CFC590026044B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB23205CFC580026044B /* Crashlytics.framework */; };
 		A293FB26205CFC590026044B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB24205CFC590026044B /* Fabric.framework */; };
 		A293FB29205D8E2F0026044B /* OauthTokeReservoir.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */; };
+		A2F7448820772B1A00EF96E4 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7448720772B1A00EF96E4 /* Delegate.swift */; };
+		A2F7448A20772BBF00EF96E4 /* ProcedureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7448920772BBF00EF96E4 /* ProcedureProtocol.swift */; };
+		A2F7448C207730B800EF96E4 /* AccessTokenVerificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7448B207730B800EF96E4 /* AccessTokenVerificationManager.swift */; };
+		A2F7448E2077382900EF96E4 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F7448D2077382900EF96E4 /* Result.framework */; };
+		A2F744902077535A00EF96E4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7448F2077535A00EF96E4 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		A293FB23205CFC580026044B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A293FB24205CFC590026044B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokeReservoir.swift; sourceTree = "<group>"; };
+		A2F7448720772B1A00EF96E4 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		A2F7448920772BBF00EF96E4 /* ProcedureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureProtocol.swift; sourceTree = "<group>"; };
+		A2F7448B207730B800EF96E4 /* AccessTokenVerificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenVerificationManager.swift; sourceTree = "<group>"; };
+		A2F7448D2077382900EF96E4 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		A2F7448F2077535A00EF96E4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 				A293FB0C205B7A660026044B /* Alamofire.framework in Frameworks */,
 				A293FB26205CFC590026044B /* Fabric.framework in Frameworks */,
 				A23E8F6D2060E69F005A73A6 /* KeychainSwift.framework in Frameworks */,
+				A2F7448E2077382900EF96E4 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +119,7 @@
 			children = (
 				A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */,
 				A23E8F712062429F005A73A6 /* AccessTokenVerifier.swift */,
+				A2F7448B207730B800EF96E4 /* AccessTokenVerificationManager.swift */,
 			);
 			path = TokenVerification;
 			sourceTree = "<group>";
@@ -171,6 +183,7 @@
 		A293FB0A205B7A660026044B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2F7448D2077382900EF96E4 /* Result.framework */,
 				A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */,
 				A293FB23205CFC580026044B /* Crashlytics.framework */,
 				A293FB24205CFC590026044B /* Fabric.framework */,
@@ -186,6 +199,7 @@
 				A293FB27205D8CC30026044B /* Authentication */,
 				A293FB1B205B9D560026044B /* RoamEventURLHandler.swift */,
 				A23E8F6F206241AF005A73A6 /* IdentityManager.swift */,
+				A2F7448920772BBF00EF96E4 /* ProcedureProtocol.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -194,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				A293FB19205B957F0026044B /* URLExtensions.swift */,
+				A2F7448720772B1A00EF96E4 /* Delegate.swift */,
+				A2F7448F2077535A00EF96E4 /* Logger.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -359,6 +375,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/KeychainSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -392,10 +409,14 @@
 				A293FB17205B83BF0026044B /* AuthenticationParameters.swift in Sources */,
 				A293FB1A205B957F0026044B /* URLExtensions.swift in Sources */,
 				A293FADE205B645A0026044B /* ViewController.swift in Sources */,
+				A2F7448C207730B800EF96E4 /* AccessTokenVerificationManager.swift in Sources */,
 				A293FB15205B7FF70026044B /* AuthenticationManager.swift in Sources */,
+				A2F7448A20772BBF00EF96E4 /* ProcedureProtocol.swift in Sources */,
 				A293FADC205B645A0026044B /* AppDelegate.swift in Sources */,
 				A23E8F70206241AF005A73A6 /* IdentityManager.swift in Sources */,
 				A293FAE1205B645A0026044B /* Roam.xcdatamodeld in Sources */,
+				A2F7448820772B1A00EF96E4 /* Delegate.swift in Sources */,
+				A2F744902077535A00EF96E4 /* Logger.swift in Sources */,
 				A293FB1C205B9D560026044B /* RoamEventURLHandler.swift in Sources */,
 				A23E8F722062429F005A73A6 /* AccessTokenVerifier.swift in Sources */,
 			);
