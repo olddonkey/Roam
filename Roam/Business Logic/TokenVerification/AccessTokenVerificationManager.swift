@@ -22,7 +22,7 @@ class AccessTokenVerificationManager: AccessTokenVerificationManagerProtocol, Pr
         case tokenExpired(String)
     }
     
-    var delegate: Delegate<Result<String, AccessTokenVerificationError>, Void> = Delegate<Result<String, AccessTokenVerificationError>, Void>()
+    var delegate = Delegate<Result<String, AccessTokenVerificationError>, Void>()
     
     init(tokenReservoir: OauthTokeReservoir) {
         self.tokenReservoir = tokenReservoir
