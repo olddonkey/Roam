@@ -1,5 +1,5 @@
 //
-//  OauthTokeReservoir.swift
+//  OauthTokenReservoir.swift
 //  Roam
 //
 //  Created by olddonkey on 2018/3/17.
@@ -36,7 +36,7 @@ class UserToken: NSObject, NSCoding {
 
 }
 
-class OauthTokeReservoir: NSObject {
+class OauthTokenReservoir: NSObject {
     
     enum storeUserTokenError: Error {
         case KeychainFailed

@@ -10,6 +10,7 @@
 		A23E8F6D2060E69F005A73A6 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */; };
 		A23E8F70206241AF005A73A6 /* IdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E8F6F206241AF005A73A6 /* IdentityManager.swift */; };
 		A23E8F722062429F005A73A6 /* AccessTokenVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E8F712062429F005A73A6 /* AccessTokenVerifier.swift */; };
+		A240A2C720E0055A003427C1 /* WorkflowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240A2C620E0055A003427C1 /* WorkflowManager.swift */; };
 		A293FADC205B645A0026044B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FADB205B645A0026044B /* AppDelegate.swift */; };
 		A293FADE205B645A0026044B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FADD205B645A0026044B /* ViewController.swift */; };
 		A293FAE1205B645A0026044B /* Roam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A293FADF205B645A0026044B /* Roam.xcdatamodeld */; };
@@ -25,7 +26,7 @@
 		A293FB20205CD85D0026044B /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */; };
 		A293FB25205CFC590026044B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB23205CFC580026044B /* Crashlytics.framework */; };
 		A293FB26205CFC590026044B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A293FB24205CFC590026044B /* Fabric.framework */; };
-		A293FB29205D8E2F0026044B /* OauthTokeReservoir.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */; };
+		A293FB29205D8E2F0026044B /* OauthTokenReservoir.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293FB28205D8E2F0026044B /* OauthTokenReservoir.swift */; };
 		A2F7448820772B1A00EF96E4 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7448720772B1A00EF96E4 /* Delegate.swift */; };
 		A2F7448A20772BBF00EF96E4 /* ProcedureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7448920772BBF00EF96E4 /* ProcedureProtocol.swift */; };
 		A2F7448C207730B800EF96E4 /* AccessTokenVerificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7448B207730B800EF96E4 /* AccessTokenVerificationManager.swift */; };
@@ -54,6 +55,7 @@
 		A23E8F6C2060E69E005A73A6 /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/Mac/KeychainSwift.framework; sourceTree = "<group>"; };
 		A23E8F6F206241AF005A73A6 /* IdentityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityManager.swift; sourceTree = "<group>"; };
 		A23E8F712062429F005A73A6 /* AccessTokenVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenVerifier.swift; sourceTree = "<group>"; };
+		A240A2C620E0055A003427C1 /* WorkflowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowManager.swift; sourceTree = "<group>"; };
 		A293FAD8205B645A0026044B /* Roam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A293FADB205B645A0026044B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A293FADD205B645A0026044B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		A293FB1F205CD85D0026044B /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
 		A293FB23205CFC580026044B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A293FB24205CFC590026044B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokeReservoir.swift; sourceTree = "<group>"; };
+		A293FB28205D8E2F0026044B /* OauthTokenReservoir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenReservoir.swift; sourceTree = "<group>"; };
 		A2F7448720772B1A00EF96E4 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		A2F7448920772BBF00EF96E4 /* ProcedureProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureProtocol.swift; sourceTree = "<group>"; };
 		A2F7448B207730B800EF96E4 /* AccessTokenVerificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenVerificationManager.swift; sourceTree = "<group>"; };
@@ -117,11 +119,19 @@
 		A23E8F6E20623F66005A73A6 /* TokenVerification */ = {
 			isa = PBXGroup;
 			children = (
-				A293FB28205D8E2F0026044B /* OauthTokeReservoir.swift */,
+				A293FB28205D8E2F0026044B /* OauthTokenReservoir.swift */,
 				A23E8F712062429F005A73A6 /* AccessTokenVerifier.swift */,
 				A2F7448B207730B800EF96E4 /* AccessTokenVerificationManager.swift */,
 			);
 			path = TokenVerification;
+			sourceTree = "<group>";
+		};
+		A240A2C520E0054A003427C1 /* Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				A240A2C620E0055A003427C1 /* WorkflowManager.swift */,
+			);
+			path = Workflow;
 			sourceTree = "<group>";
 		};
 		A293FACF205B645A0026044B = {
@@ -148,10 +158,10 @@
 		A293FADA205B645A0026044B /* Roam */ = {
 			isa = PBXGroup;
 			children = (
-				A293FB18205B95690026044B /* Utils */,
 				A293FB13205B7FD60026044B /* Business Logic */,
 				A293FADB205B645A0026044B /* AppDelegate.swift */,
 				A293FADD205B645A0026044B /* ViewController.swift */,
+				A293FB18205B95690026044B /* Utils */,
 				A293FAE2205B645A0026044B /* Assets.xcassets */,
 				A293FAE4205B645A0026044B /* Main.storyboard */,
 				A293FAE7205B645A0026044B /* Info.plist */,
@@ -195,7 +205,7 @@
 		A293FB13205B7FD60026044B /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
-				A23E8F6E20623F66005A73A6 /* TokenVerification */,
+				A240A2C520E0054A003427C1 /* Workflow */,
 				A293FB27205D8CC30026044B /* Authentication */,
 				A293FB1B205B9D560026044B /* RoamEventURLHandler.swift */,
 				A23E8F6F206241AF005A73A6 /* IdentityManager.swift */,
@@ -225,8 +235,9 @@
 		A293FB27205D8CC30026044B /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A293FB14205B7FF70026044B /* AuthenticationManager.swift */,
+				A23E8F6E20623F66005A73A6 /* TokenVerification */,
 				A293FB16205B83BF0026044B /* AuthenticationParameters.swift */,
+				A293FB14205B7FF70026044B /* AuthenticationManager.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -405,7 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A293FB29205D8E2F0026044B /* OauthTokeReservoir.swift in Sources */,
+				A293FB29205D8E2F0026044B /* OauthTokenReservoir.swift in Sources */,
 				A293FB17205B83BF0026044B /* AuthenticationParameters.swift in Sources */,
 				A293FB1A205B957F0026044B /* URLExtensions.swift in Sources */,
 				A293FADE205B645A0026044B /* ViewController.swift in Sources */,
@@ -417,6 +428,7 @@
 				A293FAE1205B645A0026044B /* Roam.xcdatamodeld in Sources */,
 				A2F7448820772B1A00EF96E4 /* Delegate.swift in Sources */,
 				A2F744902077535A00EF96E4 /* Logger.swift in Sources */,
+				A240A2C720E0055A003427C1 /* WorkflowManager.swift in Sources */,
 				A293FB1C205B9D560026044B /* RoamEventURLHandler.swift in Sources */,
 				A23E8F722062429F005A73A6 /* AccessTokenVerifier.swift in Sources */,
 			);

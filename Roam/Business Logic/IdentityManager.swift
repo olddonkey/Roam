@@ -11,7 +11,9 @@ import Cocoa
 class IdentityManager: NSObject {
     
     func appDidLaunched() {
-        
+        if isAccessTokenValid() {
+            finishLaunch
+        }
     }
     
     func isAccessTokenValid() -> Bool {

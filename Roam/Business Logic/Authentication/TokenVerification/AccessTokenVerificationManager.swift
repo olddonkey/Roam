@@ -15,7 +15,7 @@ protocol AccessTokenVerificationManagerProtocol {
 
 class AccessTokenVerificationManager: AccessTokenVerificationManagerProtocol, ProcedureProtocol {
         
-    var tokenReservoir: OauthTokeReservoir
+    var tokenReservoir: OauthTokenReservoir
     
     enum AccessTokenVerificationError: Error {
         case noAvailableToken
@@ -24,7 +24,7 @@ class AccessTokenVerificationManager: AccessTokenVerificationManagerProtocol, Pr
     
     var delegate = Delegate<Result<String, AccessTokenVerificationError>, Void>()
     
-    init(tokenReservoir: OauthTokeReservoir) {
+    init(tokenReservoir: OauthTokenReservoir) {
         self.tokenReservoir = tokenReservoir
     }
     
