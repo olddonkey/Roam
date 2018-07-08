@@ -8,7 +8,8 @@
 
 import Cocoa
 
-class AccessTokenVerifier: NSObject, ProcedureProtocol {
+class AccessTokenVerifier: NSObject {
+    
     // 1. Token is not in Keychain
     // 2. Token is in Keycain, but it is invalid
     // 3. Token is valid

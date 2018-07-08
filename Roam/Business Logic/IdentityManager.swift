@@ -12,7 +12,7 @@ class IdentityManager: NSObject {
     
     func appDidLaunched() {
         if isAccessTokenValid() {
-            finishLaunch
+            // TODO
         }
     }
     
